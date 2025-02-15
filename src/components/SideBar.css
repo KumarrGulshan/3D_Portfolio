@@ -1,0 +1,47 @@
+.box {
+  position: fixed; /* Keeps it fixed on the left */
+  top: 0vh;
+  left: 0;
+  height: 100%; /* Full height */
+  width: 1px; /* Default width (collapsed state) */
+  background-color: transparent; /* Dark background */
+  color: black;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  transition: width 0.3s ease; /* Smooth transition */
+  backdrop-filter: blur(3px);
+  z-index: 100;
+  border: 2px solid #ccccccc8;
+  
+}
+
+.box:hover {
+  width: 220px; /* Expanded width */
+  box-shadow: 0 0 10px 1px #570e84c8;
+}
+
+.icon-section {
+  padding: 0px 20px;
+}
+
+.icon-section:hover {
+  color: #570e84c8;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.icon-section a p {
+  margin-left: 10px;
+}
+
+.icon-section a {
+  text-decoration: none;
+  text-align: center;
+  color: inherit; /* Inherit color from parent */
+  display: inline-flex;
+  align-items: center;
+  font-size: 25px;
+  transition: color 0.3s;
+  margin-left:0%;
+  margin-top:30px;
+
+}
