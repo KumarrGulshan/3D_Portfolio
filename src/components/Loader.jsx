@@ -6,7 +6,7 @@ import { OrbitControls, useGLTF,Sky } from "@react-three/drei";
 
 
 const Model1 = ({initialModel1Rotation = { x: 0.1, y: 0.2 }}) => {
-  const { scene: mushrooms } = useGLTF("/My-3D-Portfolio/mushroom.glb");
+  const { scene: mushrooms } = useGLTF("/3D_Portfolio/mushroom.glb");
   const Model1Ref = useRef();
   const mousePosition = useRef({x:0, y:0});
 
