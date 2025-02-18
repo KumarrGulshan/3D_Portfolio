@@ -2,8 +2,6 @@ import React,{useState, useEffect, useRef} from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF,Sky } from "@react-three/drei";
 // import * as THREE from 'three';
- 
-
 
 const Model1 = ({initialModel1Rotation = { x: 0.1, y: 0.2 }}) => {
   const { scene: mushrooms } = useGLTF("/3D_Portfolio/mushroom.glb");
@@ -53,12 +51,11 @@ useFrame(() => {
 const Loader = () => {
   return (
   
-    <div style={{ width: "100vw", height: "100vh" }}>
+     <div style={{ width: "100vw", height: "100vh", background: "#1a1a1a" }}>
       <Canvas>
         <ambientLight intensity={1.5} />
         <directionalLight position={[5, 5, 5]} />
         
-
         <OrbitControls
           enableZoom={true}
           zoomSpeed={1.2}
@@ -70,13 +67,7 @@ const Loader = () => {
           maxPolarAngle={Math.PI / 2}
         />
 
-        <Sky style={{ width: "100vh", height: "100vh" }}
-          distance={45000} // Sky distance
-          sunPosition={[1, 10, 0]} // Sun position
-          inclination={45} // Sun angle
-          azimuth={0.25} // Sun orientation
-        />
-
+        
         <Model1 />
       </Canvas>
     </div>

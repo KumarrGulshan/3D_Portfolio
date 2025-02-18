@@ -5,14 +5,14 @@ import { arrow } from "../assets/icon";
 const Projects = () => { 
   return (
     <section className='max-container ml-30'>
-      <h1 className='head-text text-2xl'>
+      <h1 className='head-text text-white text-2xl'>
         My{" "}
-        <span className='blue-gradient_text drop-shadow font-semibold'>
+        <span className='text-indigo-600 drop-shadow text-3xl font-semibold'>
           Projects
         </span>
       </h1>
 
-      <p className='from-neutral-800 mt-2 leading-relaxed'>
+      <p className='from-neutral-800 mt-2 text-white leading-relaxed'>
         I've embarked on numerous projects throughout the years, but these are
         the ones I hold closest to my heart. Many of them are open-source, so if
         you come across something that piques your interest, feel free to
@@ -20,7 +20,7 @@ const Projects = () => {
         Your collaboration is highly valued!
       </p>
 
-      <div className='flex flex-wrap my-20 gap-130'>
+      <div className='flex flex-wrap text-indigo-600 my-20 gap-130'>
         {projects.map((project) => (
           <div className='lg:w-[400px] w-full' key={project.name}>
             <div className='block-container w-12 h-12'>
@@ -34,11 +34,11 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className='mt-5 flex flex-col'>
+            <div className='mt-2 flex text-indigo-500 border-none flex-col'>
               <h4 className='text-2xl font-poppins font-semibold'>
                 {project.name}
               </h4>
-              <p className='mt-2 text-slate-500'>{project.description}</p>
+              <p className='mt-2 text-white'>{project.description}</p>
               <div className='mt-5 flex items-center gap-2 font-poppins'>
                 <Link
                   to={project.link}
@@ -59,8 +59,6 @@ const Projects = () => {
         ))}
       </div>
 
-      
-  
     </section>
   );
 };

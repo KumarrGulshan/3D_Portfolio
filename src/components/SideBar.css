@@ -5,7 +5,7 @@
   height: 100%; /* Full height */
   width: 1px; /* Default width (collapsed state) */
   background-color: transparent; /* Dark background */
-  color: black;
+  color: white;
   overflow-x: hidden; /* Prevents horizontal scroll */
   transition: width 0.3s ease; /* Smooth transition */
   backdrop-filter: blur(3px);

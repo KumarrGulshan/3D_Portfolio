@@ -11,6 +11,7 @@ function Contact() {
   const [form, setform] = useState({ name: "", email: "", message: "" });
   const handleChange = (e) => {
     setform({ ...form, [e.target.name]: e.target.value });
+
   };
   
   const handleSubmit = (e) => {
@@ -41,7 +42,7 @@ function Contact() {
 
   return (
     <>
-    <section className="relative ml-20 lg:flex-row flex-col max-container">
+    <section className="relative ml-20 lg:flex-row text-white flex-col max-container">
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text text-2xl font-bold text-semibold">
           Get in Touch
@@ -50,12 +51,12 @@ function Contact() {
           className="w-full flex flex-col gap-7 mt-14"
           onSubmit={handleSubmit}
         >
-          <label className="text-black-500 font-semibold">Name</label>
+          <label className=" font-semibold">Name</label>
 
           <input
             type="text"
             name="name"
-            className="input w-50 bg-violet-400 rounded-e-xl p-1"
+            className="input w-50 bg-emerald-400 text-black rounded-2xl p-2"
             placeholder="John"
             required
             value={form.name}
@@ -63,11 +64,11 @@ function Contact() {
             
           />
 
-          <label className="text-black-500 font-semibold">E-mail</label>
+          <label className=" font-semibold">E-mail</label>
           <input
             type="email"
             name="email"
-            className="input w-50 bg-violet-400 rounded-e-xl p-1 "
+            className="input w-50 bg-emerald-400 text-black rounded-2xl p-2 "
             placeholder="John@gmail.com"
             required
             value={form.email}
@@ -75,12 +76,12 @@ function Contact() {
             
           />
 
-          <label className="text-black-500 font-semibold">Message</label>
+          <label className="font-semibold">Message</label>
           <textarea
             type="textarea"
             name="message"
             row={4}
-            className="textarea w-80 bg-violet-400 rounded-e-xl p-1 h-10 "
+            className="textarea w-80 bg-emerald-400 text-black rounded-2xl  p-2 h-20 "
             placeholder="Let me know how I can help you!"
             required
             value={form.message}
@@ -90,7 +91,7 @@ function Contact() {
 
           <button
             type="submit"
-            className="btn  ml-20 mt-5 bg-blue-600 w-80 h-10 rounded-bl-full hover:scale-90 transition-all 
+            className="btn  ml-30 mt-3 bg-emerald-600 w-50 h-10 rounded-2xl  hover:scale-90 transition-all 
             hover:cursor-pointer duration-300 ease-in-out transform"
             disabled={isLoading}
             
@@ -101,13 +102,13 @@ function Contact() {
       </div>
       
     </section>
-    <div className="mt-10">
-    <div className="ml-170 mr-170 text-2xl  font-semibold text-fuchsia-950">Let's connect</div>
-    <div className="mt-5 ml-153 flex flex-row gap-7 text-5xl  mr-150">
-    <a href="https://www.linkedin.com/feed/" target="_blank" className="rounded-l-2xl hover:translate-1 "> <ImLinkedin /> </a>
-    <a href="https://github.com/KumarrGulshan" target="_blank" className="rounded-l-2xl hover:translate-1"> <FaGithubSquare /> </a>
-    <a href="https://www.instagram.com/singh_gulshan__" target="_blank" className="rounded-l-2xl hover:translate-1"> <FaInstagram /> </a>
-    <a href="https://x.com/singh_gulshan__" target="_blank" className="rounded-l-2xl hover:translate-1"> <FaSquareXTwitter /> </a>
+    <div className="mt-5">
+    <div className="ml-170 mr-170 text-2xl  font-semibold text-white">Let's connect</div>
+    <div className="mt-5 ml-162 flex flex-row gap-7 text-3xl h-11 w-55 p-2 rounded-2xl bg-emerald-600 mr-162">
+    <a href="https://www.linkedin.com/feed/" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <ImLinkedin /> </a>
+    <a href="https://github.com/KumarrGulshan" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <FaGithubSquare /> </a>
+    <a href="https://www.instagram.com/singh_gulshan__" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <FaInstagram /> </a>
+    <a href="https://x.com/singh_gulshan__" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <FaSquareXTwitter /> </a>
   </div>
   </div>
   </>

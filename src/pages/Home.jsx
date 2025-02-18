@@ -28,7 +28,7 @@ function Home({ }) {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="sm:text-xl w-110 h-30 sm:leading-snug rounded-3xl ml-125 mr-125 mt-1 bg-blue-500 text-center py-4 px-6 text-white mx-5">
+    <div className="sm:text-xl w-110 h-30 sm:leading-snug rounded-3xl ml-125 mr-125 mt-1 bg-fuchsia-950 text-center py-4 px-6 text-white mx-5">
        <p className={`transition-transform duration-1000 transform ${isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
         Hi, I am <span className="font-semibold"> Gulshan </span> 🖐️ <br />
         A Software Engineer from BIHAR

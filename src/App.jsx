@@ -8,7 +8,7 @@ import SideBar from "./components/SideBar";
 function App(){
   return (
     <>
-      <main className="fixed top-0   bg-transparent  p-4 z-50"> 
+      <main className="fixed top-0  bg-transparent  p-4 z-50"> 
         <Router>
           <Navbar/>
           <SideBar/>
