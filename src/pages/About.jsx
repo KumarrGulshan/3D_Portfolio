@@ -18,8 +18,7 @@ function About() {
           Software Engineer based in India, specializing in technical education
           through hands-on learning and building application.
         </p>
-      </div>
-
+      </div>''
       <div className="flex flex-col ml-5 mt-10">
         <h1 className="font-bold text-2xl text-violet-600 mb-5">My Skills</h1>
 
@@ -36,7 +35,7 @@ function About() {
         </ul>
       </div>
 
-      <div className="py-8 mt-65 flex text-violet-600 font-bold text-2xl flex-col">
+      <div className="py-8 mt-60 flex text-violet-600 font-bold text-2xl flex-col">
         <h3 className="subhead-text  ml-5">My Experiences</h3>
         <div className="mt-10 flex flex-wrap gap-12 ">
           {skills.map((skill) => (

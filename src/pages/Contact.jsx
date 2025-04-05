@@ -102,7 +102,7 @@ function Contact() {
       </div>
       
     </section>
-    <div className="mt-5">
+    <div className="mt-1">
     <div className="ml-170 mr-170 text-2xl  font-semibold text-white">Let's connect</div>
     <div className="mt-5 ml-162 flex flex-row gap-7 text-3xl h-11 w-55 p-2 rounded-2xl bg-emerald-600 mr-162">
     <a href="https://www.linkedin.com/feed/" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <ImLinkedin /> </a>

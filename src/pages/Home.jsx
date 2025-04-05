@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import {useRef } from "react";
 import { soundoff, soundon } from "../assets/icon";
 import { arrow } from "../assets/icon";
-import Ishq_Bulaava from "../assets/Ishq Bulaava Hasee Toh Phasee 320 Kbps.mp3";
+import Air_sound from "../assets/Air_sound.mp3";
 
 function Home({ }) {
-  const audioRef = useRef(new Audio(Ishq_Bulaava));
+  const audioRef = useRef(new Audio(Air_sound));
   audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
 
@@ -14,7 +14,7 @@ function Home({ }) {
   
   useEffect(() => {
     if (isPlayingMusic) {
-      audioRef.current.play(Ishq_Bulaava).catch(err => console.error("Error playing audio:", err));
+      audioRef.current.play(Air_sound).catch(err => console.error("Error playing audio:", err));
     } else {
       audioRef.current.pause();
       audioRef.current.currentTime = 0; // Reset audio
@@ -28,9 +28,9 @@ function Home({ }) {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="sm:text-xl w-110 h-30 sm:leading-snug rounded-3xl ml-125 mr-125 mt-1 bg-fuchsia-950 text-center py-4 px-6 text-white mx-5">
+    <div className="sm:text-xl w-110 h-32 sm:leading-snug rounded-3xl ml-130 mr-125 mt-1 bg-fuchsia-950 text-center py-4 px-6 text-white mx-5">
        <p className={`transition-transform duration-1000 transform ${isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
-        Hi, I am <span className="font-semibold"> Gulshan </span> 🖐️ <br />
+        Hi, I am <span className="font-semibold text-2xl"> Gulshan </span> 🖐️ <br />
         A Software Engineer from BIHAR
       </p>
       
