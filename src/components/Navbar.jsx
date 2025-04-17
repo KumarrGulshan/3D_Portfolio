@@ -1,37 +1,39 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-
-    
-    <header className='header' >
-        <nav className="flex text-lg ml-200 font-medium bg-transparent p-3  space-x-30">
-        <NavLink to="/" className={({isActive}) => isActive ? 'text-black' : 'text-white'}>
-        <p className=' hover:text-violet-700 h-8 w-16 m-1 rounded-xl p-0.2 px-1 bg-red-700 border-red-800 border-1'>Home</p>
+    <header className="w-full bg-transparent p-4">
+      <nav className="flex flex-row sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm sm:text-lg font-medium max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+        
+        <NavLink to="/" className={({ isActive }) => isActive ? 'text-black' : 'text-white'}>
+          <p className="hover:text-violet-700 px-3 py-1 bg-red-700 border border-red-800 rounded-xl w-fit">
+            Home
+          </p>
         </NavLink>
-        
-            <NavLink to="/about" className={({isActive}) => isActive ? 'text-black' : 'text-white'}>
-            <p className=' hover:text-violet-700 h-8 w-16 m-1 rounded-xl p-0.2 px-1 bg-fuchsia-900 border-fuchsia-900 border-1'>About</p> 
-            </NavLink>
 
-            <NavLink to="/projects" className={({isActive}) => isActive ? 'text-black': 'text-white'}>
-            <p className=' hover:text-violet-700 h-8 w-17 m-1 rounded-xl p-0.2 px-1 bg-indigo-600 border-indigo-600 border-1 '>Project</p> 
-            </NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? 'text-black' : 'text-white'}>
+          <p className="hover:text-violet-700 px-3 py-1 bg-fuchsia-900 border border-fuchsia-900 rounded-xl w-fit">
+            About
+          </p>
+        </NavLink>
 
-           
-            <NavLink to="/contact" className={({isActive}) => isActive ? 'text-black': 'text-white'}>
-            <p className='  hover:text-violet-700 h-8 w-19 m-1 rounded-xl p-0.2 px-1 bg-emerald-600 border-emerald-600 border-1 '>Contact</p>
-            </NavLink>
+        <NavLink to="/projects" className={({ isActive }) => isActive ? 'text-black' : 'text-white'}>
+          <p className="hover:text-violet-700 px-3 py-1 bg-indigo-600 border border-indigo-600 rounded-xl w-fit">
+            Projects
+          </p>
+        </NavLink>
 
-        </nav>
+        <NavLink to="/contact" className={({ isActive }) => isActive ? 'text-black' : 'text-white'}>
+          <p className="hover:text-violet-700 px-3 py-1 bg-emerald-600 border border-emerald-600 rounded-xl w-fit">
+            Contact
+          </p>
+        </NavLink>
 
-        
+      </nav>
     </header>
-   
-    
-  )
+  );
 }
 
-export default Navbar   
+export default Navbar;
 

@@ -1,37 +1,38 @@
 import emailjs from "@emailjs/browser";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { ImLinkedin } from "react-icons/im";
-import { FaGithubSquare } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaGithubSquare, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-
 
 function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [form, setform] = useState({ name: "", email: "", message: "" });
+
   const handleChange = (e) => {
     setform({ ...form, [e.target.name]: e.target.value });
-
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    emailjs.send(
-      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,  // Service ID
-      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID, // Template ID
-      {
-        from_name: form.name,
-        to_name: "Gulshan",
-        from_email: form.email,
-        to_email: "ronyahuja806@gmail.com",
-        message: form.message,
-      },
-      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY  // Public key (user ID)
-    )
+
+    emailjs
+      .send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Gulshan",
+          from_email: form.email,
+          to_email: "ronyahuja806@gmail.com",
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
       .then(() => {
         setIsLoading(false);
+        alert("Message sent successfully!");
+        setform({ name: "", email: "", message: "" });
       })
       .catch((error) => {
         setIsLoading(false);
@@ -42,77 +43,75 @@ function Contact() {
 
   return (
     <>
-    <section className="relative ml-20 lg:flex-row text-white flex-col max-container">
-      <div className="flex-1 min-w-[50%] flex flex-col">
-        <h1 className="head-text text-2xl font-bold text-semibold">
-          Get in Touch
-        </h1>
-        <form
-          className="w-full flex flex-col gap-7 mt-14"
-          onSubmit={handleSubmit}
-        >
-          <label className=" font-semibold">Name</label>
+      <section className="flex flex-col lg:flex-row text-white px-4 sm:px-10 md:px-14 lg:px-20 xl:px-32 py-10 gap-10 max-container">
+        <div className="flex-1">
+          <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-4">Get in Touch</h1>
 
-          <input
-            type="text"
-            name="name"
-            className="input w-50 bg-emerald-400 text-black rounded-2xl p-2"
-            placeholder="John"
-            required
-            value={form.name}
-            onChange={handleChange}
-            
-          />
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+            <label className="font-semibold text-base sm:text-lg md:text-lg">Name</label>
+            <input
+              type="text"
+              name="name"
+              className="bg-emerald-400 w-full max-w-sm text-black rounded-2xl p-3 text-base"
+              placeholder="John"
+              required
+              value={form.name}
+              onChange={handleChange}
+            />
 
-          <label className=" font-semibold">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            className="input w-50 bg-emerald-400 text-black rounded-2xl p-2 "
-            placeholder="John@gmail.com"
-            required
-            value={form.email}
-            onChange={handleChange}
-            
-          />
+            <label className="font-semibold text-base sm:text-lg md:text-lg">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              className="bg-emerald-400 w-full max-w-sm text-black rounded-2xl p-3 text-base"
+              placeholder="john@gmail.com"
+              required
+              value={form.email}
+              onChange={handleChange}
+            />
 
-          <label className="font-semibold">Message</label>
-          <textarea
-            type="textarea"
-            name="message"
-            row={4}
-            className="textarea w-80 bg-emerald-400 text-black rounded-2xl  p-2 h-20 "
-            placeholder="Let me know how I can help you!"
-            required
-            value={form.message}
-            onChange={handleChange}
-           
-          />
+            <label className="font-semibold text-base w-60  sm:text-lg md:text-lg">Message</label>
+            <textarea
+              name="message"
+              rows={5}
+              className="bg-emerald-400 w-full h-18 max-w-lg text-black rounded-2xl p-3 text-base"
+              placeholder="Let me know how I can help you!"
+              required
+              value={form.message}
+              onChange={handleChange}
+            />
 
-          <button
-            type="submit"
-            className="btn  ml-30 mt-3 bg-emerald-600 w-50 h-10 rounded-2xl  hover:scale-90 transition-all 
-            hover:cursor-pointer duration-300 ease-in-out transform"
-            disabled={isLoading}
-            
-          >
-            {isLoading ? "Sending.." : "Send message"}
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="bg-emerald-600 hover:bg-violet-600 w-48 rounded-2xl px-5 py-2 text-white font-semibold hover:scale-95 transition-all duration-300 ease-in-out"
+              disabled={isLoading}
+            >
+              {isLoading ? "Sending..." : "Send message"}
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <div className="px-4 sm:px-10 md:px-14 lg:px-20 xl:px-32 flex flex-col items-start sm:items-center gap-4">
+        <h2 className="text-xl sm:text-2xl md:text-2xl font-semibold text-white">Let's connect</h2>
+        <div className="flex gap-5 text-3xl bg-emerald-600 rounded-2xl px-6 py-3">
+          <a href="https://www.linkedin.com/feed/" target="_blank" className="hover:scale-110 transition-transform">
+            <ImLinkedin />
+          </a>
+          <a href="https://github.com/KumarrGulshan" target="_blank" className="hover:scale-110 transition-transform">
+            <FaGithubSquare />
+          </a>
+          <a href="https://www.instagram.com/singh_gulshan__" target="_blank" className="hover:scale-110 transition-transform">
+            <FaInstagram />
+          </a>
+          <a href="https://x.com/singh_gulshan__" target="_blank" className="hover:scale-110 transition-transform">
+            <FaSquareXTwitter />
+          </a>
+        </div>
       </div>
-      
-    </section>
-    <div className="mt-1">
-    <div className="ml-170 mr-170 text-2xl  font-semibold text-white">Let's connect</div>
-    <div className="mt-5 ml-162 flex flex-row gap-7 text-3xl h-11 w-55 p-2 rounded-2xl bg-emerald-600 mr-162">
-    <a href="https://www.linkedin.com/feed/" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <ImLinkedin /> </a>
-    <a href="https://github.com/KumarrGulshan" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <FaGithubSquare /> </a>
-    <a href="https://www.instagram.com/singh_gulshan__" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <FaInstagram /> </a>
-    <a href="https://x.com/singh_gulshan__" target="_blank" className="rounded-l-2xl hover:translate-0.5"> <FaSquareXTwitter /> </a>
-  </div>
-  </div>
-  </>
+    </>
   );
 }
+
 
 export default Contact;

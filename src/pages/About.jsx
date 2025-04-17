@@ -2,44 +2,46 @@ import { skills } from "../constant";
 
 function About() {
   return (
-    <section className="max-container ml-10">
-      <h1 className="head-text text-white font-semibold ml-5">
+    <section className="max-container px-4 py-6 sm:px-6 md:px-10 lg:px-16 xl:px-20 sm:py-10 md:py-14 lg:py-20 xl:py-24">
+      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-2">
         Hello, I'm{" "}
-        <span
-          className="text-3xl font-semibold text-violet-600
-      drop-shadow"
-        >
-          Gulshan
-        </span>
+        <span className="text-violet-600 drop-shadow">Gulshan</span>
       </h1>
 
-      <div className="mt-2 ml-5  text-white text-xl flex-col gap-3 ">
+      <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6">
         <p>
           Software Engineer based in India, specializing in technical education
-          through hands-on learning and building application.
+          through hands-on learning and building applications.
         </p>
-      </div>''
-      <div className="flex flex-col ml-5 mt-10">
-        <h1 className="font-bold text-2xl text-violet-600 mb-5">My Skills</h1>
+      </div>
 
-        <ul className="flex gap-4 flex-wrap ">
-          <li className="bg-fuchsia-900 text-white rounded-lg p-2 px-4 border-b-gray-500 hover:scale-90 transition-all duration-300 ease-in-out transform cursor-pointer">
+      <div className="mt-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-violet-600 mb-4">
+          My Skills
+        </h2>
+        <ul className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8">
+          <li className="bg-fuchsia-900 text-white rounded-lg px-4 py-2 md:px-6 md:py-3 hover:scale-90 transition-all duration-300 ease-in-out cursor-pointer">
             App Development
           </li>
-          <li className="bg-fuchsia-900 text-white rounded-lg p-2 px-4 border-b-gray-500 hover:scale-90 transition-all duration-300 ease-in-out transform cursor-pointer">
+          <li className="bg-fuchsia-900 text-white rounded-lg px-4 py-2 md:px-6 md:py-3 hover:scale-90 transition-all duration-300 ease-in-out cursor-pointer">
             Web Development
           </li>
-          <li className="bg-fuchsia-900 text-white rounded-lg p-2 px-4 border-b-gray-500 hover:scale-90 transition-all duration-300 ease-in-out transform cursor-pointer">
+          <li className="bg-fuchsia-900 text-white rounded-lg px-4 py-2 md:px-6 md:py-3 hover:scale-90 transition-all duration-300 ease-in-out cursor-pointer">
             Photography
           </li>
         </ul>
       </div>
 
-      <div className="py-8 mt-60 flex text-violet-600 font-bold text-2xl flex-col">
-        <h3 className="subhead-text  ml-5">My Experiences</h3>
-        <div className="mt-10 flex flex-wrap gap-12 ">
+      <div className="py-10 mt-5 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36">
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-violet-600 mb-6">
+          My Experiences
+        </h3>
+        <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           {skills.map((skill) => (
-            <div className="block-container w-20 h-20" key={skill.name}>
+            <div
+              className="block-container w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+              key={skill.name}
+            >
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -55,5 +57,6 @@ function About() {
     </section>
   );
 }
+
 
 export default About;
