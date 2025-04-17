@@ -12,7 +12,7 @@ function Navbar() {
         </NavLink>
         
             <NavLink to="/about" className={({isActive}) => isActive ? 'text-black' : 'text-white'}>
-            <p className=' hover:text-violet-700 h-8 w-16 m-1 rounded-xl p-0.2 px-1 bg-fuchsia-900 border-fuchsia-900 border-1   '>About</p> 
+            <p className=' hover:text-violet-700 h-8 w-16 m-1 rounded-xl p-0.2 px-1 bg-fuchsia-900 border-fuchsia-900 border-1'>About</p> 
             </NavLink>
 
             <NavLink to="/projects" className={({isActive}) => isActive ? 'text-black': 'text-white'}>
@@ -28,6 +28,7 @@ function Navbar() {
 
         
     </header>
+   
     
   )
 }
